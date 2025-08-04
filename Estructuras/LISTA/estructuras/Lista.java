@@ -17,6 +17,9 @@ public class Lista {
         return longitud==0;
     }
 
+        //insertar tiene 3 posibildades: insertar  en rango invalido, devuelve false
+        //insertar en rango valido (de 2 a longitud+1)
+        //insertar en primera lista
     public boolean insertar(Object elemento, int posicion){
         boolean exito = false;
         if(posicion >=1 && posicion <= longitud+1){ //inserto si estoy en el rango adecuado, que es al principio, en medio, o al final de la lista
@@ -36,31 +39,34 @@ public class Lista {
                     posActual++;
                 }
                 //cuando llego a la posicion requerida (posicion-1)
-                Nodo nuevo = new Nodo(elemento, aux.getEnlace()); //al nuevo nodo le conecto el resto derecho de la lista
-                aux.setEnlace(nuevo); //enlazo el nodo anterior al nuevo con el nuevo, que ya tiene enlazada toda la nueva lista
+                Nodo nodo = new Nodo(elemento, aux.getEnlace()); //al nuevo nodo le conecto el resto derecho de la lista
+                aux.setEnlace(nodo); //enlazo el nodo anterior al nuevo con el nuevo, que ya tiene enlazada toda la nueva lista
             }
         }
         return exito;
     }
 
     public String toString(){
+        //pensalo y lo haces de vuelta.
+        //si lista vacia devuelvo eso, sino devuelvo la lista.
+        // se devuevle [ ... ] asi que antes de empezar bucke --> [ y luego de bucle --< ]
+        //me paro en cabecera y pongo el elemento. avanzo al siguiente. me fijo si es nulo, (while nodo !=null)
         String s;
         if(longitud==0){
             s = "Lista vacia";
         }else{
-            s = "[";
+            s ="[";
 
             Nodo aux = cabecera;
-            s = s + aux.getElemento().toString();
-            //mostramos el elemento y pasamos al siguiente
-            while(aux.getEnlace()!=null){
+            while(aux!=null){
+                s += aux.getElemento().toString();
+                if(aux.getEnlace()!=null){
+                    s+=", "; //si hay mas elementos escribo, sino no escribo.
+                }
                 aux = aux.getEnlace();
-                s = s + aux.getElemento().toString();
             }
-            s = "]";
+            s += "]";
         }
-        
-
         return s;
     }
 
