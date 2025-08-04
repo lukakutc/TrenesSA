@@ -1,0 +1,27 @@
+Raiz es la raiz del arbol.
+Hojas son los nodos sin hijos.
+Nodos internos son los que no son hoja ni raiz.
+Padres e hijos esta bastante claro.
+en arbol binario, solo pueden tener 2 hijos. Izquierdo y derecho. Pueden tener 0,1 o 2 hijos.
+se diferencia hijo izquierdo y derecho,
+
+cantidad de hijos es el grado de un nodo!
+
+ancestros: todos los padres ( o sea padres y padres del padre.)
+descendientes: todos los sub de un nodo (es decir hijos, hijos de hijos)
+
+camino: sucesion de nodos por los que paso para llegar  a un nodo a a  un nodo b
+longitud de camini: cantidad de enlaces o sea, nodos - 1
+
+altura: longitud mas grande del nodo hasta la hoja
+produnfidad: distancia de un nodo a la raiz.
+
+
+SIEMPRE SE RECORRE DE PADRE A HIJOI, NUNCA DE HIJO A PADRE (de hecho, no tenemos acceso a eso)
+
+
+recorridos: preorden (primero raiz, luego hijo izquierdo)
+
+recorridos: inorden: primero hijo izquierda, luego raiz luego hijo derecho.
+
+posorden: primero hijo izquierdo, hijo derecho, luego padre.
