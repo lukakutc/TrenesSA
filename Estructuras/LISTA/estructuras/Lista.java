@@ -70,4 +70,33 @@ public class Lista {
         return s;
     }
 
+    //vamos con eliminar. que casos hay?
+    //1. eliminar primera posicion (cabecera = cabecera.getEnlace());
+    //2. eliminar cualq otra posicion (1<pos<=longitud)
+    //3. posicion invalida. (pos < 1 || pos > longitud)
+    public boolean eliminar(int pos){
+        boolean exito = false;
+        //no se puede eliminar.
+        if(pos>=1 && pos <= longitud){
+            //se puede eliminar
+            exito = true;
+            longitud--;
+            if(pos==1){
+                cabecera = cabecera.getEnlace(); //si es un solo elemento el enlace sera nulo, la lista queda vacia.
+            }else{
+                //otro caso que no sea primer posicion
+                //me paro en la posicion anterior, y reconecto con el enlace del elemento a eliminar.
+                Nodo aux = cabecera;
+                int posActual = 1;
+                while(posActual != pos-1){
+                    posActual++;
+                    aux = aux.getEnlace();
+                }
+                //cuando llego al nodo anterior al de la posicion, lo enlazo con el enlace del nodo a eliminar (lo salteo)
+                aux.setEnlace(aux.getEnlace().getEnlace());
+                // que pasa cuando elimino ultima posicion? por ejemplo 4. me paro en 3, y le enlazo el enlace de 4 (nulo), esta bien.
+            }
+        }
+        return exito;
+    }
 }

@@ -19,10 +19,29 @@ public class TestLista {
         System.out.println("Salida esperaada: [1,4,2,5,3]");
         System.out.println("lista: "+lista.toString());
 
-        System.out.println("Inserto en final de lista, salida esperada: [1,4,2,3,5,6,7]");
-        lista.insertar(5, 5);
-        lista.insertar(6, 6);
-        lista.insertar(7,7);
+        lista.insertar(6, 5);
+        lista.insertar(7,6);
 
+        System.out.println("Inserto en final de lista, salida esperada: [1,4,2,3,5,6,7]");
+        System.out.println("Lista: "+lista.toString());
+        
+        System.out.println("ahora elimino elemento de posicion 2");
+        lista.eliminar(2);
+        System.out.println("Lista esperada: [1,2,3,5,6,7]");
+        System.out.println("Lista: "+lista.toString());
+        
+        System.out.println("elimino ultimo elemento: "+lista.toString());
+        lista.eliminar(6);
+        System.out.println("Lista esperada: [1,2,3,5,6]");
+        System.out.println("Lista: "+lista.toString());
+        
+        System.out.println("Elimino primer elemento.");
+        lista.eliminar(1);
+        System.out.println("lista esperada: [2,3,5,6]");
+        System.out.println("Lista: "+lista.toString());
+        System.out.println("Elimino anteultimo elemento: ");
+        lista.eliminar(3);
+        System.out.println("Lista esperada: [2,3,6]");
+        System.out.println("Lista: "+lista.toString());
     }
 }
